@@ -1,0 +1,16 @@
+@import './base.css';
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-column-justify {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
