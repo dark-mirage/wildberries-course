@@ -5,19 +5,19 @@ import { defineComponent,type PropType } from 'vue';
 <template>
     <div class="course-content container">
         <ul class="course-content__list flex-column">
-            <li class="course-content__item flex" v-for="(item, index) in items" :key="index">
+            <li class="course-content__item flex" v-for="(ContentItem, ContentIndex) in ContentItems" :key="ContentIndex">
                 <div class="flex-column">
                     <span class="course-content__module">
-                        {{ item.module }}
+                        {{ ContentItem.module }}
                     </span>
                     <p class="course-content__text">
-                        {{ item.text }}
+                        {{ ContentItem.text }}
                     </p>
                     <span class="course-content__span">
-                        {{ item.span }}
+                        {{ ContentItem.span }}
                     </span>
                 </div>
-                <img class="course-content__img" :src="item.img" alt="pic">
+                <img class="course-content__img" :src="ContentItem.img" alt="pic">
             </li>
         </ul>
     </div>
@@ -26,7 +26,6 @@ import { defineComponent,type PropType } from 'vue';
 <style lang="scss">
 
 .course-content {
-
     &__list {
         align-items: center;
         justify-content: center;
@@ -88,7 +87,7 @@ import { defineComponent,type PropType } from 'vue';
 
 <script lang="ts">
 
-export interface ListItem {
+export interface ContentListItem {
     module: string;
     text: string;
     span: string;
@@ -101,7 +100,7 @@ export default defineComponent({
 
     },
     props: {
-        items: Array as PropType<ListItem[]>
-    }
+        ContentItems: Array as PropType<ContentListItem[]>
+    },
 })
 </script>

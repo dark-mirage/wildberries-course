@@ -1,4 +1,16 @@
 @import './base.css';
+/* @import '../fonts/ofont.Enthalpy298.ttf'; */
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+body {
+  font-family: 'Enthalpy 298';
+}
 
 .flex {
   display: flex;
@@ -13,4 +25,28 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.gap4px {
+  gap: 4px
+}
+
+.gap10px {
+  gap: 10px;
+}
+
+.gap14px {
+  gap: 14px
+}
+
+.gap20px {
+  gap: 20px;
+}
+
+.gap30px {
+  gap: 30px
 }
