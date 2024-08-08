@@ -3,7 +3,7 @@ import { defineComponent,type PropType } from 'vue';
 </script>
 
 <template>
-    <div class="course-content container">
+    <div class="course-content">
         <ul class="course-content__list flex-column">
             <li class="course-content__item flex" v-for="(ContentItem, ContentIndex) in ContentItems" :key="ContentIndex">
                 <div class="flex-column">
@@ -68,7 +68,7 @@ import { defineComponent,type PropType } from 'vue';
         color: rgb(255, 255, 255);
     }
 
-    &__img:nth-child(1) {
+    &__img:first-child {
         width: 297px;
         height: 237px;
     }
@@ -81,6 +81,53 @@ import { defineComponent,type PropType } from 'vue';
     &__img:nth-child(3) {
         width: 335px;
         height: 194px;
+    }
+}
+
+@media(max-width: 1400px) {
+    .course-content__item {
+        max-width: 70%;
+        width: 100%;
+    }
+}
+
+@media(max-width: 1270px ) {
+    .course-content__item {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .course-content__item:first-child > .course-content__img {
+        width: 300px;
+    }
+} 
+
+@media(max-width: 930px) {
+.course-content__item {
+    display: flex;
+    flex-direction: column;
+}
+
+.course-content__span {
+    margin-bottom: 40px;
+}
+
+.course-content__img {
+    width: 280px ;
+}
+}
+
+@media(max-width: 860px) {
+    .course-content__item {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+@media(max-width: 570px) {
+    .course-content__item {
+    
     }
 }
 </style>

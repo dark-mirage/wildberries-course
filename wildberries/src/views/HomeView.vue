@@ -24,8 +24,8 @@ import ButtonComponent from '../components/ButtonComponent.vue';
   
           <span class="wildberries__first-line-span">Курс по заработку на маркетплейсах</span>
   
-          <div class="flex gap10px">
-            <div class="flex-column gap4px">
+          <div class="wildberries__course-start-2-wrapper flex gap10px">
+            <div class="wildberries__course-start-2 flex-column gap4px">
               <span class="wildberries__first-line-span">
                 Длительность 
               </span>
@@ -44,7 +44,7 @@ import ButtonComponent from '../components/ButtonComponent.vue';
             <span class="wildberries__second-line-span">WILDBERRIES</span>
           </div>
 
-          <div class="wildberries__third-line flex">
+          <div class="wildberries__third-line wildberries-1920px flex">
             <div class="wildberries__third-line-block">
               <h3 class="wildberries__third-line-h3">ЗА 1 МЕСЯЦ ВЫ УЗНАЕТЕ:</h3>
               <p class="wildberries__third-line-text">
@@ -70,11 +70,33 @@ import ButtonComponent from '../components/ButtonComponent.vue';
               <ButtonComponent class="wildberries__btn" title="ПРИОБРЕСТИ КУРС"/>
             </div>
          </div>
-      </div>
-    </div>
+
+        </div>
+   </div>
   </section>
 
   <section class="advantages section">
+    <div class="wildberries__third-line wildberries-960px flex">
+            <div class="wildberries__third-line-block">
+              <h3 class="wildberries__third-line-h3">ЗА 1 МЕСЯЦ ВЫ УЗНАЕТЕ:</h3>
+              <p class="wildberries__third-line-text">
+                как зарабатывать от 70 000 р. <br>
+                в месяц на маркетплейсах
+                с помощью проверенных методов
+                от практикующего эксперта
+              </p>
+            </div>
+
+            <div class="wildberries__third-line-block">
+              <h3 class="wildberries__third-line-h3">━ АЛЕКСЕЙ ФЕДОРОВ</h3>
+              <p class="wildberries__third-line-text">
+                Экспер в теме маркетплейсов.
+                Более 7 лет опыта. Владелец
+                магазина с оборотом 5 млн рублей.
+              </p>
+            </div>
+      </div>
+    
     <div class="advantages__container container">
       <h2 class="advantages__h2 section__h2">ТЕБЕ ПОДОЙДЕТ КУРС, ЕСЛИ</h2>
       <AdvantagesComponent :AdvantagesItems="AdvantagesItems"/>
@@ -114,7 +136,6 @@ import ButtonComponent from '../components/ButtonComponent.vue';
 
   </section>
   
-
 </template>
 
 <style lang="scss">
@@ -134,6 +155,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 25px;
 }
 
 .section__h2 {
@@ -163,6 +185,7 @@ body {
 .question__form {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 30px;
   max-width: 1190px;
   width: 100%;
@@ -209,33 +232,42 @@ body {
   background-color: #10182b
 }
 
+.wildberries__btn-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .wildberries {
   &__container {
     position: relative;
     width: 100%;
     height: 1216px;
     padding-top: 40px;
-    padding: 35px 370px;
+    padding: 35px 30px;
     background-image: url('src/assets/img/wildberries-bg.png');
-    background-size:  100% 100%;
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
 
   &__wrapper {
     max-width: 1207px;
+    width: 100%;
   }
 
   &__bg {
     position: absolute;
+    right: 50%;
+    top: 25%;
     display: flex;
     justify-content: space-between;
-    bottom: -120px;
-    right: 680px;
     height: 1027px;
     width: 590px;
     background-image: url('src/assets/img/wildberries-man.png');
     background-position: bottom 200px;
     background-repeat: no-repeat;
+    transform: translate(50%, 0);
   }
 
   &__first-line {
@@ -261,6 +293,12 @@ body {
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
+  }
+
+  &__second-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   &__second-line-text {
@@ -314,13 +352,271 @@ body {
   &__btn {
     position: absolute;
     top: 500px;
-    left: 100px;
     width: 370px;
     font-size: 16px;
     font-weight: 700;
     line-height: 23px;
     border-radius: 20px;
     color: #92540c;
+  }
+
+}
+
+.wildberries-960px {
+  display: none;
+}
+
+@media(max-width: 1400px) { 
+  .course-price__item:nth-child(2) {
+      margin-bottom: 0px;
+      background-color: #d9d9d9;
+  }
+}
+
+@media(max-width: 1450px) {
+  .wildberries__second-line-text {
+    font-size: 36px;
+  }
+
+  .wildberries__second-line-span {
+    font-size: 170px;
+}
+}
+
+@media(max-width: 1300px) {
+  .wildberries__second-line-text {
+    font-size: 32px;
+  }
+
+  .wildberries__second-line-span {
+    font-size: 150px;
+    line-height: 190px
+  }
+
+  .wildberries__container {
+    height: 1116px;
+}
+
+  .wildberries__bg {
+    top: 26%;
+    height: 827px;
+  }
+}
+
+@media(max-width: 1100px) {
+
+  .wildberries__container {
+    height: 1016px;
+  }
+
+  .wildberries__bg {
+    top: 28.5%;
+    height: 727px;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .wildberries__second-line-span {
+    font-size: 130px;
+  }
+
+  .wildberries__second-line-text {
+    font-size: 30px;
+  }
+}
+
+@media(max-width: 960px) {
+  .wildberries-1920px {
+    display: none;
+  }
+
+  .wildberries-960px {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 50px;
+  }
+
+  .wildberries-960px > .wildberries__third-line-block:nth-child(2) {
+    margin-left: auto;
+  }
+
+  .wildberries__third-line-block {
+    max-width: 100%;
+    justify-content: flex-end;
+  }
+
+  .wildberries__second-line-span {
+    font-size: 110px;
+  }
+
+  .wildberries__container {
+    height: 800px;
+  }
+
+  .wildberries__btn {
+    top: 470px;
+  }
+
+  .wildberries__bg {
+    top: 36%;
+    height: 527px;
+  }
+
+  .wildberries__second-line-span {
+    font-size: 95px;
+    line-height: 120px;
+  }
+
+  .wildberries__second-line-text {
+    line-height: 32px;
+    
+}
+}
+
+@media(max-width: 760px) {
+
+  .wildberries__container {
+    height: 700px;
+    padding: 35px 20px;
+  }
+
+  .wildberries__bg {
+    top: 39%;
+    height: 427px;
+  }
+
+  .wildberries__second-line-span {
+    font-size: 85px;
+  }
+
+  .wildberries__btn {
+    top: 380px;
+  }
+
+  .wildberries-960px {
+    padding: 20px;
+  }
+
+  .wildberries__third-line-text {
+    max-width: 260px;
+  }
+  
+}
+
+@media(max-width: 640px) {
+  .wildberries__second-line-text {
+    max-width: 360px;
+    font-size: 24px;
+    text-align: center;
+  }
+}
+
+@media(max-width: 600px) {
+
+  .wildberries__first-line {
+    display: grid;
+    grid-template-areas:
+    "wildberries__first-line-span wildberries__first-line-span"
+    "wildberries__course-start wildberries__course-start-2";
+    grid-gap: 10px;
+    grid-template-columns: 300px 1fr;
+  }
+
+  .wildberries__first-line-span {
+    display: flex;
+    grid-area: wildberries__first-line-span;
+    justify-content: center;
+  }
+
+  .wildberries__course-start {
+    grid-area: wildberries__course-start;
+  }
+
+  .wildberries__course-start-2-wrapper {
+    justify-content: flex-end;
+  }
+
+  .wildberries__course-start-2 {
+    grid-area: wildberries__course-start;
+  }
+
+  .wildberries__second-line-span {
+    font-size: 85px;
+  }
+
+  .wildberries__bg {
+    width: 100%;
+  }
+
+  .course-content__item {
+    position: relative;
+    max-width: 990px;
+    padding: 47px 42px 77px 42px;
+    border-radius: 10px;
+    background: rgb(16, 24, 43);
+  }
+
+  .wildberries__first-line {
+    margin-bottom: 46px;
+}
+
+  .wildberries__wrapper {
+    width: 100%;
+  }
+
+  .wildberries__container {
+    padding: 35px 10px;
+  }
+
+  .wildberries__second-line {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section__h2 {
+    font-size: 38px;
+  }
+}
+
+@media(max-width: 520px) {
+
+  .course-content__item {
+    position: relative;
+    max-width: 990px;
+    padding: 47px 32px 77px 32px;
+    border-radius: 10px;
+    background: rgb(16, 24, 43);
+  }
+
+  .course-content__text {
+    font-size: 28px;
+  }
+
+  .course-content__span {
+    font-size: 14px;
+  }
+
+  .course-content__img:nth-child(2) {
+    width: 300px;
+    height: 217px;
+}
+}
+
+@media(max-width: 500px) {
+  .wildberries__second-line-span {
+    font-size: 65px;
+  }
+
+  .wildberries__first-line { 
+    grid-template-columns: 250px 1fr;
+  }
+
+  .section__h2 {
+    font-size: 32px;
   }
 }
 

@@ -1,15 +1,19 @@
-@import './base.css';
-/* @import '../fonts/ofont.Enthalpy298.ttf'; */
+@font-face {
+  font-family: Entalphy;
+  src: url(../fonts/enthalpy298regular.otf);
+}
 
 * {
   padding: 0;
   margin: 0;
   text-decoration: none;
   list-style-type: none;
+  box-sizing: border-box;
+  /* border: 1px solid green; */
 }
 
 body {
-  font-family: 'Enthalpy 298';
+  font-family: Entalphy;
 }
 
 .flex {
